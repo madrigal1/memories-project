@@ -2,6 +2,8 @@ import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import postsRoutes from './routes/posts.js'
+import userRoutes from './routes/users.js'
+
 import dotenv from 'dotenv'
 
 const app = express();
@@ -18,6 +20,7 @@ const CONNECTION_URL  = process.env.CONNECTION_URL || "";
 const PORT  = process.env.PORT || 5000;
 
 app.use("/posts",postsRoutes);
+app.use("/user",userRoutes);
 
 app.get("/",(req,res)=>res.send("Memories Api v1.0"));
  

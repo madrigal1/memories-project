@@ -5,13 +5,14 @@ export const COLLECTION_NAME="posts";
 
 const postSchema = new mongoose.Schema({
     creator:String,
+    name:String, 
     title:String,
     message:String,
     tags:[String],
     selectedFile:String,
-    likeCount:{
-        type:String,
-        default:0
+    likes:{
+        type:[String],
+        default:[],
     },
     createdAt:{
         type:String,
